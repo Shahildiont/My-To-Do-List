@@ -5,11 +5,28 @@
 }
 
 body {
-  background-color: #3498db;
   font-family: "Poppins", sans-serif;
   color: #f8f9fa;
-  min-height: 100vh;
+  min-height: auto;
+
+  
+  background-image: url('C:\react projects\myreact\my-app\bg.webp');
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* semi-transparent black */
+  z-index: -1; /* behind content */
+}
+
+
 
 .app {
   max-width: 500px;
