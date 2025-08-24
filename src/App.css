@@ -58,13 +58,39 @@ button:hover {
   transform: scale(1.05);
 }
 
+#box {
+  width: 90%;
+  height: auto;
+  max-width: 500px;
+  margin: 20px auto;
+  background: grey;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.header-row span {
+  flex: 1;
+  text-align: center;
+}
+
 ul {
   width: 100%;
   list-style: none;
   padding: 15px;
-  background-color: #ecf0f1;
+  background-color: grey;
   border-radius: 12px;
-  min-height: 150px;
+  min-height: 150px;  
 }
 
 li {
@@ -93,4 +119,19 @@ li input[type="checkbox"] {
 
 .delete-btn:hover {
   transform: scale(1.2);
+}
+
+.save {
+  
+  float: inline-end;
+  bottom: 15px;       
+  right: 15px;        
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }

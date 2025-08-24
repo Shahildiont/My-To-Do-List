@@ -25,6 +25,18 @@ function App() {
     setTodos(todos.filter((t) => t.id !== id));
   };
 
+  function saveToFile(todos) {
+  const content = todos.map(t => `${t.completed ? "[x]" : "[ ]"} ${t.text}`).join("\n");
+  const blob = new Blob([content], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "todos.txt";
+  a.click();
+  URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="app">
       <h1>React To-Do</h1>
@@ -40,22 +52,32 @@ function App() {
         <button type="submit">Add</button>
       </form>
 
-      
-      <ul>
-        {todos.map((t) => (
-          <li key={t.id}>
-            <input
-              type="checkbox"
-              checked={t.completed}
-              onChange={() => toggleTodo(t.id)}
-            />
-            <span style={{ textDecoration: t.completed ? "line-through" : "" }}>
-              {t.text}
-            </span>
-            <button onClick={() => deleteTodo(t.id)}>❌</button>
+      <div id="box">
+        
+        <ul>
+          <li className="header-row">
+            <span >Status</span>
+            <span >Task</span>
+            <span >Delete</span>
           </li>
-        ))}
-      </ul>
+          {todos.map((t) => (
+            <li key={t.id}>
+              <input
+                type="checkbox"
+                checked={t.completed}
+                onChange={() => toggleTodo(t.id)}
+              />
+              <span style={{ textDecoration: t.completed ? "line-through" : "" }}>
+                {t.text}
+              </span>
+              <button onClick={() => deleteTodo(t.id)}>❌</button>
+            </li>
+          ))}
+          {todos.length > 0 && (
+            <button class="save" onClick={() => saveToFile(todos)}>Download Tasks</button>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
