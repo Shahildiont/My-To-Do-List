@@ -32,7 +32,7 @@ function App() {
     const content = todos
       .map(
         (t) =>
-          `${t.completed ? "❌Not Completed 🡆" : "✔️Completed 🡆"} ${t.text}`
+          `${t.completed ? "✔️ Completed =>" : "❌ Not Completed =>"} ${t.text}`
       )
       .join("\n");
     const blob = new Blob([content], { type: "text/plain" });
