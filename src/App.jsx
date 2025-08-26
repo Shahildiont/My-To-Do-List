@@ -5,10 +5,9 @@ import Nav from "./Nav.jsx";
 import About from "./About";
 import Tips from "./Tips.jsx";
 
-
 function App() {
   const [todos, setTodos] = useState([]);
-  const [text, setText] = useState(""); 
+  const [text, setText] = useState("");
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -30,10 +29,15 @@ function App() {
   };
 
   function saveToFile(todos) {
-    const content = todos.map(t => `${t.completed ? "❌Not Completed 🡆" : "✔️Completed 🡆"} ${t.text}`).join("\n");
+    const content = todos
+      .map(
+        (t) =>
+          `${t.completed ? "❌Not Completed 🡆" : "✔️Completed 🡆"} ${t.text}`
+      )
+      .join("\n");
     const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    
+
     const a = document.createElement("a");
     a.href = url;
     a.download = "todos.txt";
@@ -43,64 +47,73 @@ function App() {
 
   return (
     <Router>
-      <Nav /> 
-      
-      <Routes>
-        
-        <Route 
-          path="/" 
-          element={
-            <div className="app">
-              <h1>React To-Do</h1>
+      <div className="app-container">
+        <Nav />
 
-              <form onSubmit={addTodo}>
-                <input
-                  type="text"
-                  placeholder="Enter task"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                />
-                <button type="submit">Add</button>
-              </form>
+        <div className="content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="app">
+                  <h1>React To-Do</h1>
 
-              <div id="box">
-                <ul>
-                  <li className="header-row">
-                    <span>Status</span>
-                    <span>Task</span>
-                    <span>Delete</span>
-                  </li>
-                  {todos.map((t) => (
-                    <li className="spf" key={t.id}>
-                      <input
-                        type="checkbox"
-                        checked={t.completed}
-                        onChange={() => toggleTodo(t.id)}
-                      />
-                      <span style={{ textDecoration: t.completed ? "line-through" : "" }}>
-                        {t.text}
-                      </span>
-                      <button onClick={() => deleteTodo(t.id)}>❌</button>
-                    </li>
-                  ))}
-                  {todos.length > 0 && (
-                    <button className="save" onClick={() => saveToFile(todos)}>Download Tasks</button>
-                  )}
-                </ul>
-              </div>
+                  <form onSubmit={addTodo}>
+                    <input
+                      type="text"
+                      placeholder="Enter task"
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
+                    />
+                    <button type="submit">Add</button>
+                  </form>
 
-              
-            </div>
-          } 
-        />
+                  <div id="box">
+                    <ul>
+                      <li className="header-row">
+                        <span>Status</span>
+                        <span>Task</span>
+                        <span>Delete</span>
+                      </li>
+                      {todos.map((t) => (
+                        <li className="spf" key={t.id}>
+                          <input
+                            type="checkbox"
+                            checked={t.completed}
+                            onChange={() => toggleTodo(t.id)}
+                          />
+                          <span
+                            style={{
+                              textDecoration: t.completed ? "line-through" : "",
+                            }}
+                          >
+                            {t.text}
+                          </span>
+                          <button onClick={() => deleteTodo(t.id)}>❌</button>
+                        </li>
+                      ))}
+                      {todos.length > 0 && (
+                        <button
+                          className="save"
+                          onClick={() => saveToFile(todos)}
+                        >
+                          Download Tasks
+                        </button>
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              }
+            />
+            <Route path="/About" element={<About />} />
+            <Route path="/Tips" element={<Tips />} />
+          </Routes>
+        </div>
 
-        
-        <Route path="/About" element={<About />} />
-        <Route path="/Tips" element={<Tips />} />
-      </Routes>
-      <footer>
-        <p>🌊 Stay productive & enjoy the waves of life 🌊</p>
-      </footer>
+        <footer>
+          <p>🌊 Stay productive & enjoy the waves of life 🌊</p>
+        </footer>
+      </div>
     </Router>
   );
 }

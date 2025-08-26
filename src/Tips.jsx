@@ -5,7 +5,7 @@ const Tips = () => {
   return (
     <div className="tips-container">
       <h1>Productivity Tips</h1>
-      <p>Maximize your efficiency with these quick tips:</p>
+      <p>Maximize your efficiency with these quick tips and tricks:</p>
       <ul>
         <li>Break large tasks into smaller steps.</li>
         <li>Prioritize tasks using a daily to-do list.</li>
