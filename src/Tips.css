@@ -1,0 +1,64 @@
+.tips-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2c3e50; /* soft text color for beach theme */
+  text-align: center;
+  background: transparent; /* semi-transparent card to blend with beach bg */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+}
+
+.tips-container h1 {
+  color: #f6fbff; /* ocean blue for heading */
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.tips-container p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #e7f3ff; /* darker, readable text */
+  font-weight: bolder;
+}
+
+.tips-container ul {
+  list-style-type: disc;  /* keep bullets */
+  text-align: center;     /* center the content inside ul */
+  margin: 0 auto;
+  max-width: 600px;
+  padding-left: 0;        /* remove left padding */
+}
+
+.tips-container ul li {
+  display: inline-block;  /* make li behave like inline block */
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 10px 15px;     /* add some padding around each tip */
+  position: relative;
+  color: #2c3e50;
+  transition: transform 0.2s ease, color 0.2s ease;
+  list-style-position: inside; /* keep bullets inside the block */
+  font-weight: bolder;
+}
+
+/* subtle hover effect for beach vibe */
+.tips-container ul li:hover {
+  transform: translateX(5px);
+  color: #0b2e52; /* highlight tip in ocean blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tips-container h1 {
+    font-size: 1.8rem;
+  }
+  .tips-container p,
+  .tips-container ul li {
+    font-size: 1rem;
+  }
+}
