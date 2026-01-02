@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+#window{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8f9fa;
+  background-image: url("wp11672457-8k-beach-wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); 
+  z-index: -1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8f9fa;
+  min-height: auto;
+ background-image: url("wp11672457-8k-beach-wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+
+
+.app {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2c3e5000;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  /* width: 250px; */
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  background-color: #1a242f;
+  color: #f8f9fa;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0d161f;
+  transform: scale(1.05);
+}
+
+#box {
+  width: 90%;
+  height: auto;
+  max-width: 500px;
+  margin: 20px auto;
+  background: linear-gradient(
+    160deg,
+    #00c6ff 0%,   /* bright turquoise */
+    #0072ff 50%,  /* deeper ocean blue */
+    #00bfff 100%  /* light blue / sky tone */
+  );
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.header-row span {
+  flex: 1;
+  text-align: center;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 15px;
+background: linear-gradient(
+    160deg,
+    #00c6ff 0%,   /* bright turquoise */
+    #0072ff 50%,  /* deeper ocean blue */
+    #00bfff 100%  /* light blue / sky tone */
+  );
+  border-radius: 12px;
+  min-height: 150px;  
+}
+
+
+
+li.spf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+}
+
+li.spf span {
+  flex: 1;
+  text-align: center;
+}
+
+li.spf input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #c0392b;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+.save {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.save:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+footer {
+  position:static; /* allows floating effect */
+  bottom: 0;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 40px auto 0;
+  max-width: 400px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent glass effect */
+  border-radius: 20px; /* rounded edges */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle glass border */
+  backdrop-filter: blur(10px); /* glass blur effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* floating shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+
+}
+
+footer:hover {
+  transform: translateY(-5px); /* slight hover lift effect */
+}
+
+footer p {
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content grows and pushes footer down */
+.content {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 10px;
+  margin: 40px auto 0;
+  max-width: 400px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent glass effect */
+  border-radius: 20px; /* rounded edges */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle glass border */
+  backdrop-filter: blur(10px); /* glass blur effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* floating shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
