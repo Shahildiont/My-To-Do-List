@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 // Models
-const Todo = require('./models/Todo');
-const User = require('./models/User');
+const Todo = require('../models/Todo');
+const User = require('../models/User');
 
 // Middleware
 app.use(cors());
@@ -157,6 +157,4 @@ app.delete('/api/todos/:id', auth, async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
