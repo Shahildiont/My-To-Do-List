@@ -1,7 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
-console.log("ENV:", process.env.MONGO_URI);
+// console.log("ENV:", process.env.MONGO_URI);
 
 const express = require('express');
 const mongoose = require('mongoose');
